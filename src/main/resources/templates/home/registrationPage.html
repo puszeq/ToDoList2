@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div id="second">
+                <div class="myform form ">
+                    <div class="logo mb-3">
+                        <div class="col-md-12 text-center">
+                            <h1>Register</h1>
+                        </div>
+                    </div>
+                    <form th:action="@{/register}" method="POST" th:object="${user}" name="registration">
+
+                        <div class="form-group">
+                            <label for="firstname">Name</label>
+                            <input type="text" th:field="*{name}" class="form-control" id="firstname"
+                                   aria-describedby="emailHelp" placeholder="Your name">
+                        </div>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('name')}" role="alert">
+                            <span th:errors="*{name}"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastname">Surname</label>
+                            <input type="text" th:field="*{surname}" class="form-control" id="lastname"
+                                   aria-describedby="emailHelp" placeholder="Your surname">
+                        </div>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('surname')}" role="alert">
+                            <span th:errors="*{surname}"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login">Username</label>
+                            <input type="text" th:field="*{login}" class="form-control" id="login"
+                                   aria-describedby="emailHelp" placeholder="Your username">
+                        </div>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('login')}" role="alert">
+                            <span th:errors="*{login}"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" th:field="*{password}" id="password" class="form-control"
+                                   aria-describedby="emailHelp" placeholder="Your password">
+                        </div>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('password')}" role="alert">
+                            <span th:errors="*{password}"></span>
+                        </div>
+
+                        <div class="col-md-12 text-center mb-3">
+                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm"
+                                    >Register now!</button>
+                        </div>
+                        <div class="col-md-12 ">
+                            <div class="form-group">
+                                <p class="text-center"><a th:href="@{/login}" id="signin"
+                                                          >Oh, you already have an account?</a></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

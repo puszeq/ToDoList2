@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="layout/navbar :: head">
+    <title id="pageTitle">Tasks Form</title>
+</head>
+<body>
+
+<div th:include="layout/navbar :: navigationPanel"></div>
+
+<div class="container">
+    <h3>Your Tasks</h3>
+    <hr>
+
+    <p class="h4 mb-4">Save new task</p>
+
+    <form th:action="@{/tasks/save}"
+          th:object="${task}" method="POST">
+
+        <input type="hidden" th:field="*{id}"/>
+
+        <input type="text" th:field="*{shortDescription}" class="form-control mb-4 col-4" placeholder="Short description">
+        <div class="alert alert-danger" th:if="${#fields.hasErrors('shortDescription')}" role="alert">
+            <span th:errors="*{shortDescription}"></span>
+        </div>
+
+        <input type="text" th:field="*{detailedDescription}" class="form-control mb-4 col-4" placeholder="Detailed description">
+        <div class="alert alert-danger" th:if="${#fields.hasErrors('detailedDescritpion')}" role="alert">
+            <span th:errors="*{detailedDescritpion}"></span>
+        </div>
+        <br>
+        <br>
+
+        <button type="submit" class="btn btn-info col-2">Save</button>
+    </form>
+
+    <hr>
+    <a th:href="@{/tasks/list}"><- Back to list</a>
+</div>
+
+</body>
+
+</html>

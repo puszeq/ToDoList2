@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout/navbar :: head">
+    <title id="pageTitle">Update User</title>
+</head>
+
+<body>
+
+<div th:include="layout/navbar :: navigationPanel"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div id="second">
+                <div class="myform form ">
+                    <div class="logo mb-3">
+                        <div class="col-md-12 text-center">
+                            <h1>Update your info</h1>
+                        </div>
+                    </div>
+                    <form th:action="@{/update}" method="POST" th:object="${user}" name="registration">
+
+                        <input type="hidden" th:field="*{userid}"/>
+                        <input type="hidden" th:field="*{login}"/>
+                        <input type="hidden" th:field="*{password}"/>
+
+                        <div class="form-group">
+                            <label for="firstname">Name</label>
+                            <input type="text" th:field="*{name}" class="form-control" id="firstname"
+                                   aria-describedby="emailHelp" placeholder="Your name">
+                        </div>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('name')}" role="alert">
+                            <p class="error" th:errors="*{name}"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastname">Surname</label>
+                            <input type="text" th:field="*{surname}" class="form-control" id="lastname"
+                                   aria-describedby="emailHelp" placeholder="Your surname">
+                        </div>
+                        <div class="alert alert-danger" th:if="${#fields.hasErrors('surname')}" role="alert">
+                            <p class="error" th:errors="*{surname}"></p>
+                        </div>
+
+                        <div class="col-md-12 text-center mb-3">
+                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm"
+                                    >Update my info</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

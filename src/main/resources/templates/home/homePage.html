@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="layout/navbar :: head">
+    <title id="pageTitle">Home Page</title>
+</head>
+<body>
+<div th:include="layout/navbar :: navigationPanel"></div>
+
+<h3 th:text="'Hey, good to see you ' + ${user.getName()} + '!'" style="text-align: center"></h3>
+<br/>
+<br/>
+<img src="https://lh3.googleusercontent.com/proxy/vXh89PIJ7aBdoHk8mpTYQPXla1Cb8ZyKZVfCgd198eO5BpJzvS6SlOVAn0kGgL2Ojh7QWAaui6LvuP4kKYL6b822VePKJng4upgWKhNo8hsE4aH2-g" class="rounded mx-auto d-block" alt="Hello!">
+
+</body>
+</html>
