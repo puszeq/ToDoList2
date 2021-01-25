@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:include="layout/navbar :: head">
+    <title id="pageTitle">Register</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -11,6 +12,7 @@
 </head>
 
 <body>
+<div th:include="layout/navbar :: navigationPanel"></div>
 <div class="container">
     <div class="row">
         <div class="col-md-5 mx-auto">
