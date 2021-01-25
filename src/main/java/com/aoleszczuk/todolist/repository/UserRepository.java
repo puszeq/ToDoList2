@@ -1,6 +1,6 @@
-package com.mpolec.student.project.repository;
+package com.aoleszczuk.todolist.repository;
 
-import com.mpolec.student.project.entity.UserEntity;
+import com.aoleszczuk.todolist.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {

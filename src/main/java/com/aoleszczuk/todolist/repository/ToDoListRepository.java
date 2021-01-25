@@ -1,6 +1,6 @@
-package com.mpolec.student.project.repository;
+package com.aoleszczuk.todolist.repository;
 
-import com.mpolec.student.project.entity.ToDoListEntity;
+import com.aoleszczuk.todolist.entity.ToDoListEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,10 +1,10 @@
-package com.mpolec.student.project.controller;
+package com.aoleszczuk.todolist.controller;
 
-import com.mpolec.student.project.entity.ToDoListEntity;
-import com.mpolec.student.project.entity.UserEntity;
-import com.mpolec.student.project.model.ToDoListModel;
-import com.mpolec.student.project.service.ToDoListService;
-import com.mpolec.student.project.service.UserService;
+import com.aoleszczuk.todolist.entity.ToDoListEntity;
+import com.aoleszczuk.todolist.entity.UserEntity;
+import com.aoleszczuk.todolist.model.ToDoListModel;
+import com.aoleszczuk.todolist.service.ToDoListService;
+import com.aoleszczuk.todolist.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +32,7 @@ public class ToDoListController {
         UserEntity user = userService.findByLogin(principal.getName());
         model.addAttribute("tasks", user.getTasks());
 
-        return "tasks/taskList";
+        return "task/taskList";
     }
 
     @GetMapping("/showFormForAdd")
@@ -41,7 +41,7 @@ public class ToDoListController {
         ToDoListModel task = new ToDoListModel();
         model.addAttribute("task", task);
 
-        return "tasks/taskForm";
+        return "task/taskForm";
     }
 
     @GetMapping("/showFormForUpdate")
@@ -56,7 +56,7 @@ public class ToDoListController {
 
         model.addAttribute("task", toDoListModel);
 
-        return "taskForm";
+        return "task/taskForm";
     }
 
     @GetMapping("/delete")
@@ -68,16 +68,18 @@ public class ToDoListController {
 
     @PostMapping("/save")
     public String saveStudent(@Valid @ModelAttribute("task") ToDoListModel task,
-                              BindingResult bindingResult) {
+                              BindingResult bindingResult,
+                              Principal principal) {
 
         if(bindingResult.hasErrors()) {
-            return "taskForm";
+            return "task/taskForm";
         }
 
         ToDoListEntity toDoListEntity = new ToDoListEntity();
         toDoListEntity.setId(task.getId());
         toDoListEntity.setShortDescription(task.getShortDescription());
         toDoListEntity.setDetailedDescription(task.getDetailedDescription());
+        toDoListEntity.setUser(userService.findByLogin(principal.getName()));
 
         toDoListService.save(toDoListEntity);
 

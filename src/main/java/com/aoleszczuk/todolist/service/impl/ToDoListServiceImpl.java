@@ -1,8 +1,8 @@
-package com.mpolec.student.project.service.impl;
+package com.aoleszczuk.todolist.service.impl;
 
-import com.mpolec.student.project.entity.ToDoListEntity;
-import com.mpolec.student.project.repository.ToDoListRepository;
-import com.mpolec.student.project.service.ToDoListService;
+import com.aoleszczuk.todolist.entity.ToDoListEntity;
+import com.aoleszczuk.todolist.repository.ToDoListRepository;
+import com.aoleszczuk.todolist.service.ToDoListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

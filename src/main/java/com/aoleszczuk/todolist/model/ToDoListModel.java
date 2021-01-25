@@ -1,9 +1,8 @@
-package com.mpolec.student.project.model;
+package com.aoleszczuk.todolist.model;
 
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 @Data
 public class ToDoListModel {

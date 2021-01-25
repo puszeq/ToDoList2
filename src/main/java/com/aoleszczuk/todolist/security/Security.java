@@ -1,4 +1,4 @@
-package com.mpolec.student.project.security;
+package com.aoleszczuk.todolist.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

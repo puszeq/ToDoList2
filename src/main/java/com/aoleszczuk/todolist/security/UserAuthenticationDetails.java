@@ -1,7 +1,7 @@
-package com.mpolec.student.project.security;
+package com.aoleszczuk.todolist.security;
 
-import com.mpolec.student.project.entity.UserEntity;
-import com.mpolec.student.project.repository.UserRepository;
+import com.aoleszczuk.todolist.entity.UserEntity;
+import com.aoleszczuk.todolist.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

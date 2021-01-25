@@ -1,4 +1,4 @@
-package com.mpolec.student.project.entity;
+package com.aoleszczuk.todolist.entity;
 
 import lombok.Data;
 

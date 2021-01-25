@@ -25,9 +25,6 @@
         </div>
 
         <input type="text" th:field="*{detailedDescription}" class="form-control mb-4 col-4" placeholder="Detailed description">
-        <div class="alert alert-danger" th:if="${#fields.hasErrors('detailedDescritpion')}" role="alert">
-            <span th:errors="*{detailedDescritpion}"></span>
-        </div>
         <br>
         <br>
 

@@ -1,8 +1,8 @@
-package com.mpolec.student.project.controller;
+package com.aoleszczuk.todolist.controller;
 
-import com.mpolec.student.project.entity.UserEntity;
-import com.mpolec.student.project.model.PasswordModel;
-import com.mpolec.student.project.service.UserService;
+import com.aoleszczuk.todolist.entity.UserEntity;
+import com.aoleszczuk.todolist.model.PasswordModel;
+import com.aoleszczuk.todolist.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;

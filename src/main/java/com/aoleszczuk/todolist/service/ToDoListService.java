@@ -1,6 +1,6 @@
-package com.mpolec.student.project.service;
+package com.aoleszczuk.todolist.service;
 
-import com.mpolec.student.project.entity.ToDoListEntity;
+import com.aoleszczuk.todolist.entity.ToDoListEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
